@@ -1,9 +1,11 @@
 #include <istream>
+#include <string>
 #include <cctype>
 
 #include "funcs.h"
 
 using std::istream;
+using std::string;
 
 void removeLeadingSpaces(string& line) {
 	int cnt = 0;

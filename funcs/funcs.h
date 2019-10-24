@@ -3,11 +3,9 @@
 
 #include <istream>
 #include <string>
-#include <list>
 
 using std::istream;
 using std::string;
-using std::list;
 
 void removeLeadingSpaces(string &line);
 
