@@ -1,9 +1,9 @@
-#include <fstream>
+#include <istream>
 #include <cctype>
 
 #include "funcs.h"
 
-using std::ifstream;
+using std::istream;
 
 void removeLeadingSpaces(string& line) {
 	int cnt = 0;
@@ -39,12 +39,11 @@ void indent(string& line, int cnt) {
 	line = res + line;
 }
 
-string formatFile(const string& filename) {
-	ifstream input(filename);
+string format(istream& source) {
 	string line, res;
 	int ind = 0;
 
-	while (getline(input, line)) {
+	while (getline(source, line)) {
 		removeLeadingSpaces(line);
 
 		ind -= countChar(line, '}');

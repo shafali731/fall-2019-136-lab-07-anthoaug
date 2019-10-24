@@ -1,22 +1,18 @@
 #include <iostream>
+#include <list>
 
 #include "funcs/funcs.h"
 
 using std::cout;
+using std::list;
+using std::cin;
+
 
 int main() {
-	cout << formatFile("bad-code/bad-code-1");
+	list<string> lines;
+	string line, res;
 
-	string ideal =
-	"int main(){\n"
-	"\t// Hi, I'm a program!\n"
-	"\tint x = 1;\n"
-	"\tfor(int i = 0; i < 10; i++) {\n"
-	"\t\tcout << i;\n"
-	"\t\tcout << endl;\n"
-	"\t}\n"
-	"}"
-	;
+	res = format(cin);
 
-	cout << std::endl << ideal;
+	cout << res;
 }

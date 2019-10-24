@@ -1,7 +1,11 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
+#include <fstream>
+
 #include "../funcs/funcs.h"
 #include "doctest.h"
+
+using std::ifstream;
 
 TEST_CASE ("bad-code-1") {
 	string ideal =
@@ -12,10 +16,11 @@ TEST_CASE ("bad-code-1") {
 		"\t\tcout << i;\n"
 		"\t\tcout << endl;\n"
 		"\t}\n"
-		"}"
-	;
+		"}";
 
-	CHECK(formatFile("bad-code/bad-code-1") == ideal);
+	ifstream code("bad-code/bad-code-1");
+
+	CHECK(format(code) == ideal);
 }
 
 TEST_CASE ("bad-code-2") {
@@ -27,10 +32,11 @@ TEST_CASE ("bad-code-2") {
 		"\t\tcout << i;\n"
 		"\t\tcout << endl;\n"
 		"\t}\n"
-		"}"
-	;
+		"}";
 
-	CHECK(formatFile("bad-code/bad-code-2") == ideal);
+	ifstream code("bad-code/bad-code-2");
+
+	CHECK(format(code) == ideal);
 }
 
 TEST_CASE ("bad-code-3") {
@@ -66,8 +72,9 @@ TEST_CASE ("bad-code-3") {
 		"\t}\n"
 		"\n"
 		"\treturn cnt;\n"
-		"}"
-	;
+		"}";
 
-	CHECK(formatFile("bad-code/bad-code-3") == ideal);
+	ifstream code("bad-code/bad-code-3");
+
+	CHECK(format(code) == ideal);
 }
