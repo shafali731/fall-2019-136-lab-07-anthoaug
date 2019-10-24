@@ -6,13 +6,13 @@
 TEST_CASE ("bad-code-1") {
 	string ideal =
 		"int main(){\n"
-		"    // Hi, I'm a program!\n"
-		"    int x = 1; \n"
-		"    for(int i = 0; i < 10; i++) {\n"
-		"        cout << i;\n"
-		"        cout << endl;\n"
-		"    } \n"
-		"}     "
+		"\t// Hi, I'm a program!\n"
+		"\tint x = 1;\n"
+		"\tfor(int i = 0; i < 10; i++) {\n"
+		"\t\tcout << i;\n"
+		"\t\tcout << endl;\n"
+		"\t}\n"
+		"}"
 	;
 
 	CHECK(formatFile("bad-code/bad-code-1") == ideal);
@@ -20,14 +20,14 @@ TEST_CASE ("bad-code-1") {
 
 TEST_CASE ("bad-code-2") {
 	string ideal =
-	"int main(){\n"
-	"    // Hi, I'm a program!\n"
-	"    int x = 1; \n"
-	"    for(int i = 0; i < 10; i++) {\n"
-	"        cout << i;\n"
-	"        cout << endl;\n"
-	"    } \n"
-	"}     "
+		"int main(){\n"
+		"\t// Hi, I'm a program!\n"
+		"\tint x = 1;\n"
+		"\tfor(int i = 0; i < 10; i++) {\n"
+		"\t\tcout << i;\n"
+		"\t\tcout << endl;\n"
+		"\t}\n"
+		"}"
 	;
 
 	CHECK(formatFile("bad-code/bad-code-2") == ideal);
@@ -45,21 +45,25 @@ TEST_CASE ("bad-code-3") {
 		"void removeLeadingSpaces(string& line) {\n"
 		"\tint cnt = 0;\n"
 		"\n"
-		"\tfor (char c : line)\n"
-		"\t\tif (isspace(c))\n"
+		"\tfor (char c : line) {\n"
+		"\t\tif (isspace(c)) {\n"
 		"\t\t\tcnt++;\n"
+		"\t\t}\n"
 		"\t\telse {\n"
 		"\t\t\tline = line.substr(cnt);\n"
 		"\t\t\treturn;\n"
 		"\t\t}\n"
+		"\t}\n"
 		"}\n"
 		"\n"
 		"int countChar(const string& line, char c) {\n"
 		"\tint cnt = 0;\n"
 		"\n"
-		"\tfor (char ch : line)\n"
-		"\t\tif (ch == c)\n"
+		"\tfor (char ch : line) {\n"
+		"\t\tif (ch == c) {\n"
 		"\t\t\tcnt++;\n"
+		"\t\t}\n"
+		"\t}\n"
 		"\n"
 		"\treturn cnt;\n"
 		"}"

@@ -1,28 +1,32 @@
-	 	#include <fstream>
- #include <cctype>
+														#include <fstream>
+	#include <cctype>
 
-					#include "funcs/funcs.h"
+#include "funcs/funcs.h"
 
-using std::ifstream;
+																			using std::ifstream;
 
-void removeLeadingSpaces(string& line) {
-										int cnt = 0;
+	void removeLeadingSpaces(string& line) {
+int cnt = 0;
 
-for (char c : line)
-				if (isspace(c))
-	cnt++;
-			else {
-			line = line.substr(cnt);
-		return;
-	}
-	}
+for (char c : line) {
+						if (isspace(c)) {
+		cnt++;
+			}
+else {
+					line = line.substr(cnt);
+	return;
+				}
+		}
+																			}
 
-		int countChar(const string& line, char c) {
+int countChar(const string& line, char c) {
 	int cnt = 0;
 
-					for (char ch : line)
-		if (ch == c)
-	cnt++;
+	for (char ch : line) {
+		if (ch == c) {
+			cnt++;
+		}
+	}
 
-			return cnt;
-																					}
+	return cnt;
+}

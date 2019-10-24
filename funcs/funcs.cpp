@@ -30,6 +30,9 @@ int countChar(const string& line, char c) {
 void indent(string& line, int cnt) {
 	string res;
 
+	if (line.empty())
+		return;
+
 	for (int i = 0; i < cnt; ++i)
 		res += "\t";
 
@@ -53,5 +56,5 @@ string formatFile(const string& filename) {
 		ind += countChar(line, '{');
 	}
 
-	return res;
+	return res.substr(0, res.length() - 1);
 }
