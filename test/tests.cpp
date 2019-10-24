@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include "funcs/funcs.h"
+#include "../funcs/funcs.h"
 #include "doctest.h"
 
 TEST_CASE ("bad-code-1") {

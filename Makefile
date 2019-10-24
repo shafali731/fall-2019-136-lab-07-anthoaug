@@ -7,8 +7,8 @@ tests: tests.o funcs.o
 main.o: main.cpp funcs/funcs.h
 	g++ -c main.cpp
 
-tests.o: tests/tests.cpp funcs/funcs.h
-	g++ -I funcs tests/tests.cpp
+tests.o: test/tests.cpp funcs/funcs.h
+	g++ -c test/tests.cpp
 
 funcs.o: funcs/funcs.cpp funcs/funcs.h
 	g++ -c funcs/funcs.cpp
