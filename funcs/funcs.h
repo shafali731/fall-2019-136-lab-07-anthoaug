@@ -5,10 +5,12 @@
 
 using std::string;
 
-string removeLeadingSpaces(const string& line);
+void removeLeadingSpaces(string& line);
 
 int countChar(const string& line, char c);
 
-string indent(const string& line, int cnt);
+void indent(string& line, int cnt);
+
+string formatFile(const string& filename);
 
 #endif
