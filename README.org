@@ -1,11 +1,11 @@
 * Fall 2019 - Lab 06
 
-* Last name:
+* Last name: Augustin
 
-* First name:
+* First name: Anthony
 
 
-* GitHub username:
+* GitHub username: anthoaug
 
 * Notes:
 
