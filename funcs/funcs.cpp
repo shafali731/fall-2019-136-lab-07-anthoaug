@@ -1,7 +1,7 @@
 #include <fstream>
 #include <cctype>
 
-#include "funcs/funcs.h"
+#include "funcs.h"
 
 using std::ifstream;
 

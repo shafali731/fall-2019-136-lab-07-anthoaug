@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include "tests/doctest.h"
 #include "funcs/funcs.h"
+#include "doctest.h"
 
 TEST_CASE ("bad-code-1") {
 	string ideal =
