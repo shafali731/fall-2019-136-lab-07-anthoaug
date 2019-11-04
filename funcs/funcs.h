@@ -7,6 +7,8 @@
 using std::istream;
 using std::string;
 
+bool there(string line, string word);
+
 void removeLeadingSpaces(string &line);
 
 int countChar(const string& line, char c);

@@ -7,6 +7,15 @@
 using std::istream;
 using std::string;
 
+bool there(string line, string word){
+	int s= word.length();
+	for(int i = 0; i<line.length()-s+2; i++){
+		if(line.substr(i, s) == word){
+			return true;
+		}
+	}
+	return false;
+}
 void removeLeadingSpaces(string& line) {
 	int cnt = 0;
 
@@ -43,6 +52,7 @@ void indent(string& line, int cnt) {
 
 string format(istream& source) {
 	string line, res;
+	bool ifyes= false;
 	int ind = 0;
 
 	while (getline(source, line)) {
@@ -50,9 +60,21 @@ string format(istream& source) {
 
 		ind -= countChar(line, '}');
 
-		indent(line, ind);
+		if (ifyes){
+			indent(line, ind+1);
+
+			ifyes= false;
+		}
+		else{
+			indent(line, ind);
+
+			}
 
 		res += line + "\n";
+		if((there(line, "if") || there(line, "for")) && !there(line, "{")){
+		//	ind +=1;
+			ifyes = true;
+		}
 
 		ind += countChar(line, '{');
 	}
